@@ -1,11 +1,18 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
+project(mini-cli C)
 
-project(mini-cli LANGUAGES C)
-
+# 1. On déclare D'ABORD l'exécutable
 add_executable(mini-cli
     main.c
     linked.c
-    linked.h
+    Fonction/fonction.c
+    Get/interaction.c
 )
 
-install(TARGETS mini-cli RUNTIME DESTINATION bin)
+# 2. On attache ENSUITE les dossiers d'en-têtes à la cible
+target_include_directories(mini-cli PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/Data
+    ${CMAKE_CURRENT_SOURCE_DIR}/Fonction
+    ${CMAKE_CURRENT_SOURCE_DIR}/Get
+)

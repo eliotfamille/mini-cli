@@ -1,5 +1,5 @@
-#ifndef STRUCT_H
-#define STRUCT_H
+#ifndef DATA_H
+#define DATA_H
 
 typedef struct text{
     char *name_text;
