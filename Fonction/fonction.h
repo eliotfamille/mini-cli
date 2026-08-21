@@ -1,29 +1,27 @@
 #ifndef FONCTION_H
 #define FONCTION_H
 
-#include <stdlib.h>
-#include <stdbool.h>
 #include "data.h"
 #include "interaction.h"
 
-files *root;
-int i_pwd=0;
-int i_pwd_find=0;
+extern folder *root;        // the folder root
+extern int i_pwd;           // index to brows in the system
+extern int i_pwd_find;      // temporary index to find somethink
 
-char **pwd;
-char **pwd_find;
+extern char **pwd;          // the actual directory
+extern char **pwd_find;     // a temporary directory of an folder or file
 
 // verification
-bool find_files(files *hote, char to_find[]);
-bool find_text(files *hote, char name[]);
+bool find_folder(folder *hote, char to_find[]);
+bool find_text(folder *hote, char name[]);
 
 // show
-void list(files *hote);
+void list(folder *hote);
 
 // command
-void cd(files *hote, files *direction);
-void search(files *hote,char name[]);
-void touch(files *hote,char name[],char content[]);
-void mkdir(files *hote,char name[]);
+void cd(folder *hote, char *name);
+void search(folder *hote,char *name);
+void touch(folder *hote,text *file);
+void mkdir(folder *hote,char *name);
 
 #endif

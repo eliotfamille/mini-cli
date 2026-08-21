@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "linked.h"
 #include "fonction.h"
 
 int main(int argc, char *argv[])
